@@ -1,2 +1,3 @@
 # scratch
-Misc
+
+Repository that is a temporary workspace.
