@@ -8,5 +8,10 @@
 # Test binary, build with `go test -c`
 *.test
 
-# Output of the go coverage tool, specifically when used with LiteIDE
+# Build system tools and outputs
 *.out
+build/
+bazel-*
+override.bazelrc
+
+.idea/
