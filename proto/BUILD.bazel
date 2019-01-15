@@ -1,12 +1,15 @@
 load("@io_bazel_rules_go//go:def.bzl", "go_library")
 load("@io_bazel_rules_go//proto:def.bzl", "go_proto_library")
 
+# gazelle:exclude test.validator.pb.go
+
 proto_library(
     name = "scratch_test_proto",
     srcs = ["test.proto"],
     visibility = ["//visibility:public"],
     deps = [
-        "//github.com/mwitkow/go-proto-validators:validators_proto",
+        "//vendor/github.com/mwitkow/go-proto-validators:validator_proto",
+        "@com_google_protobuf//:empty_proto",
         "@go_googleapis//google/api:annotations_proto",
     ],
 )
@@ -21,7 +24,7 @@ go_proto_library(
     proto = ":scratch_test_proto",
     visibility = ["//visibility:public"],
     deps = [
-        "//github.com/mwitkow/go-proto-validators:go_default_library",
+        "//vendor/github.com/mwitkow/go-proto-validators:go_default_library",
         "@go_googleapis//google/api:annotations_go_proto",
     ],
 )

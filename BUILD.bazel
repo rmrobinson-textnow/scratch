@@ -1,4 +1,8 @@
 load("@bazel_gazelle//:def.bzl", "gazelle")
 
-# gazelle:prefix github.com/rmrobinson-textnow/scratch
-gazelle(name = "gazelle")
+gazelle(
+    name = "gazelle",
+    command = "fix",
+    external = "external",
+    prefix = "github.com/rmrobinson-textnow/scratch",
+)
